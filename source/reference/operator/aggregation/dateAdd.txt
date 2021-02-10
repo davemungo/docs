@@ -1,0 +1,100 @@
+======================
+$dateAdd (aggregation)
+======================
+
+.. default-domain:: mongodb
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 1
+   :class: singlecol
+
+Definition
+----------
+
+.. expression:: $dateAdd
+
+   .. versionadded:: 5.0
+
+   The $dateAdd function increments a date object by a specified amount
+   of time units.
+
+   The :expression:`$dateAdd` expression has the following syntax:
+
+   .. code-block:: javascript
+
+      { 
+         $dateAdd: { 
+            startDate: <Expression>, 
+            unit: <Expression>, 
+            amount: <Expression>, 
+            timezone: <tzExpression>
+         }
+      } 
+
+   Returns a Date. The ‘startDate’ can be any expression of type Date,
+   Timestamp or ObjectId. No matter which type is used as input, the
+   value returned will be a Date object.
+
+   .. list-table::
+      :header-rows: 1
+      :widths: 20 20 60
+
+      * - Field
+        - Required/Optional
+        - Description
+
+      * - ``startDate``
+        - Required
+        - An expression that resolves to a Date, Timestamp, or ObjectId
+
+      * - ``unit``
+        - Required
+        - An expression that resolves to one of the following strings:
+          year, quarter, week, month, day, hour, minute, second,
+          millisecond
+
+      * - ``amount``
+        - Required
+        - An expression that resolves to
+
+      * - ``timezone``
+        - Optional
+        - .. include:: /includes/fact-timezone-description.rst
+
+   For more information on expressions, see :ref:`aggregation-expressions`.
+
+Behavior
+--------
+
+Value Range
+~~~~~~~~~~~
+
+
+Time Zone
+~~~~~~~~~
+
+.. include:: /includes/fact-olson-tz-behavior.rst
+
+Example
+-------
+
+The following aggregation uses :expression:`$dateFromParts` to
+construct three date objects from the provided input fields:
+
+.. code-block:: javascript
+
+   db.sales.aggregate([
+    TODO 
+   }])
+
+The operation returns the following result:
+
+.. code-block:: javascript
+
+   {
+     TODO
+   }
+
+
