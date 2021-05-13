@@ -39,11 +39,10 @@ advantages over the :binary:`~bin.mongo` shell, such as:
 
 - Improved logging.
 
-The ``mongosh`` currently supports a subset of the older
+The MongoDB Shell currently supports a subset of the older
 :binary:`~bin.mongo` shell methods. To maintain backwards
-compatibility, the methods that the new ``mongosh`` supports use the
-same syntax as the corresponding methods in the :binary:`~bin.mongo`
-shell.
+compatibility, the methods that ``mongosh`` supports use the same
+syntax as the corresponding methods in the :binary:`~bin.mongo` shell.
 
 The list of methods supported by ``mongosh`` is here:
 :mongosh:`MongoDB Shell Methods </reference/methods>`.

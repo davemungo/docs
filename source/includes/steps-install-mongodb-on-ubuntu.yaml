@@ -10,25 +10,22 @@ content: |
 
        wget -qO - https://www.mongodb.org/static/pgp/server-{+pgp-version+}.asc | sudo apt-key add -
 
-    The operation should respond with an ``OK``. 
-    
+    The operation should respond with an ``OK``.
+
     However, if you receive an error indicating that ``gnupg`` is not
     installed, you can:
-       
+
     #. Install ``gnupg`` and its required libraries using the following command:
 
        .. code-block:: bash
 
           sudo apt-get install gnupg
-       
+
     #. Once installed, retry importing the key:
 
        .. code-block:: bash
 
           wget -qO - https://www.mongodb.org/static/pgp/server-{+pgp-version+}.asc | sudo apt-key add -
-
-       
-   
 
 ---
 title: Create a list file for MongoDB.
@@ -43,7 +40,7 @@ content: |
 
    Click on the appropriate tab for your version of Ubuntu.
    If you are unsure of what Ubuntu version the host is running,
-   open a terminal or shell on the host and execute ``lsb_release -dc``. 
+   open a terminal or shell on the host and execute ``lsb_release -dc``.
 
    .. tabs::
 
@@ -121,7 +118,7 @@ content: |
            name: Install the latest version of MongoDB.
            content: |
 
-              To install the latest stable version, issue the following
+              To install the latest stable version, run:
 
               .. code-block:: bash
 
@@ -133,7 +130,7 @@ content: |
               .. include:: /includes/release/pin-version-intro.rst
               .. include:: /includes/release/pin-repo-to-version-deb.rst
               .. include:: /includes/release/pin-version-outro-org.rst
-  
+
    Optional. Although you can specify any available version of MongoDB,
    ``apt-get`` will upgrade the packages when a newer version becomes
    available. To prevent unintended upgrades, you can pin the package
@@ -143,7 +140,7 @@ content: |
 
       echo "{+package-name-org+} hold" | sudo dpkg --set-selections
       echo "{+package-name-org+}-server hold" | sudo dpkg --set-selections
-      echo "{+package-name-org+}-shell hold" | sudo dpkg --set-selections
+      echo "{+package-name-org+}-mongosh hold" | sudo dpkg --set-selections
       echo "{+package-name-org+}-mongos hold" | sudo dpkg --set-selections
       echo "{+package-name-org+}-tools hold" | sudo dpkg --set-selections
 ...

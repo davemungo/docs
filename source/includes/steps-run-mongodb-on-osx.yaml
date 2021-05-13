@@ -70,7 +70,7 @@ action:
   - heading: Run ``mongod`` with a configuration file
     pre: |
       Run the :binary:`~bin.mongod` process at the system prompt,
-      providing the path to a 
+      providing the path to a
       :doc:`configuration file </reference/configuration-options>`
       with the ``config`` parameter:
     language: sh
@@ -101,24 +101,24 @@ title: Begin using MongoDB.
 stepnum: 6
 ref: begin-using-mongodb
 pre: |
-  Start a :binary:`~bin.mongo` shell on the same host machine as the 
-  :binary:`~bin.mongod`. You can run the :binary:`~bin.mongo` shell
-  without any command-line options to connect to a
-  :binary:`~bin.mongod` that is running on your *localhost* with the
+  Start the MongoDB Shell (:mongosh:`mongosh </>`) on the same host
+  computer as the :binary:`~bin.mongod`. You can run
+  :mongosh:`mongosh </>` without any command-line options to connect to
+  a :binary:`~bin.mongod` that is running on your *localhost* with the
   default port of *27017*:
 action:
   language: shell
   code: |
-     mongo
+     mongosh
 post: |
-  .. note:: macOS Prevents ``mongo`` From Opening
+  .. note:: macOS Prevents ``mongosh`` From Opening
 
 
      .. include:: /includes/extracts/macos-prevent-launch-mongo.rst
 
-  For more information on connecting using the :binary:`~bin.mongo`
-  shell, such as to connect to a :binary:`~bin.mongod` instance running
-  on a different host and/or port, see :doc:`/reference/mongo`.
+  For more information on connecting with :mongosh:`mongosh </>`, such
+  as connecting to a :binary:`~bin.mongod` instance running on a
+  different host and/or port, see :mongosh:`Connect to a Deployment </connect>`.
 
   To help you start using MongoDB, MongoDB provides :ref:`Getting
   Started Guides <getting-started>` in various driver editions. See
@@ -126,5 +126,6 @@ post: |
 
 replacement:
   mongod: ":binary:`~bin.mongod`"
-  mongo: ":binary:`~bin.mongo`"
+  mongo: ":mongosh:`mongosh </>`"
 ...
+

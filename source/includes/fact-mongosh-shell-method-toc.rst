@@ -14,5 +14,5 @@ documentation for the corresponding ``MongoDB`` release.
 - :v4.0:`mongo shell v4.0 </mongo>`
 
 For MongoDB API drivers, refer to the language specific
-:driver:`MongoDB driver </>` documentation.
+:driver:`MongoDB driver</>` documentation.
 
