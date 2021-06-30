@@ -35,7 +35,7 @@ MongoDB 5.0 introduces the following aggregation operators:
 
    * - :expression:`$dateDiff`
      - Returns the difference between two dates.
-       
+
    * - :expression:`$dateSubtract`
      - Decrements a :doc:`Date </reference/method/Date>` object by a
        specified number of time units.
@@ -49,18 +49,18 @@ MongoDB 5.0 introduces the following aggregation operators:
        between 0 and 1 each time it is called. The new
        :expression:`$sampleRate` operator is based on ``$rand``. (Also
        added to MongoDB 4.4.2)
-   
+
    * - :group:`$count`
-     - MongoDB 5.0 adds the 
-       :group:`$count (aggregation accumulator) <$count>` which 
-       provides a count of all documents when used in a 
+     - MongoDB 5.0 adds the
+       :group:`$count (aggregation accumulator) <$count>` which
+       provides a count of all documents when used in a
        :pipeline:`$group (aggregation) <$group>` pipeline stage.
 
        .. note:: Disambiguation
 
           The :group:`$count (aggregation accumulator) <$count>` is
-          distinct from the :pipeline:`$count (aggregation) <$count>` 
-          pipeline stage. 
+          distinct from the :pipeline:`$count (aggregation) <$count>`
+          pipeline stage.
 
 General Aggregation Improvements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,6 +95,26 @@ Starting in MongoDB 5.0, an aggregation pipeline :pipeline:`$lookup`
 stage supports :ref:`concise correlated subqueries
 <lookup-syntax-concise-correlated-subquery>` that improve joins between
 collections.
+
+.. _5.0-rel-notes-auditing:
+
+Auditing
+--------
+
+MongDB 5.0 adds the ability to configure auditing filters at runtime.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 20 80
+
+   * - Operator
+     - Description
+
+   * - :dbcommand:`getAuditConfig`
+     - Retrieves audit configurations from ``mongod`` and ``mongos``.
+
+   * - :parameter:`auditConfigPollingFrequencySecs`
+     - Defines the polling interval for checking audit configuration
 
 .. _5.0-rel-notes-change-streams:
 
@@ -260,7 +280,7 @@ The ``mongo`` shell has been deprecated in MongoDB v5.0. The
 replacement shell is :mongosh:`mongosh </>`. The legacy ``mongo`` shell
 will be removed in a future release.
 
-Shell packaging also changes in MongoDB v5.0. Refer to the 
+Shell packaging also changes in MongoDB v5.0. Refer to the
 :mongosh:`installation instructions </install>` for further details.
 
 Shell Support for GCP and Azure KMS Providers
@@ -268,7 +288,7 @@ Shell Support for GCP and Azure KMS Providers
 
 Starting in MongoDB 5.0 (and MongoDB 4.4.5), the Google Cloud Platform
 KMS and Azure Key Vault are supported in both :mongosh:`mongosh </>`
-and the legacy :binary:`~bin.mongo` shell as 
+and the legacy :binary:`~bin.mongo` shell as
 :ref:`Key Management Service (KMS) <field-level-encryption-kms>`
 providers for :doc:`/core/security-client-side-encryption`.
 
@@ -323,12 +343,12 @@ General Improvements
 Audit Events
 ~~~~~~~~~~~~
 
-Starting in MongoDB 5.0, ``startup`` and ``logout`` audit action types 
-are available in 
+Starting in MongoDB 5.0, ``startup`` and ``logout`` audit action types
+are available in
 :doc:`System Event Audit Messages </reference/audit-message>`.
 
 The ``dropCollection`` audit action type (``atype``) adds an audit
-event when a :ref:`view <3.4-reference-views>` is dropped. 
+event when a :ref:`view <3.4-reference-views>` is dropped.
 
 ``mongosShutdownTimeoutMillisForSignaledShutdown`` Parameter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -417,7 +437,7 @@ Previously, :dbcommand:`logRotate` would rotate the two logs together.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Starting in MongoDB 5.0, :ref:`slow operation
-<database-profiling-specify-slowms-threshold>` log messages include a 
+<database-profiling-specify-slowms-threshold>` log messages include a
 ``remote`` field specifying client IP address.
 
 Define Variables Using the ``let`` Option
@@ -482,7 +502,7 @@ Aggregation Metrics
 
 Replication Metrics
   - :serverstatus:`metrics.repl.reconfig.numAutoReconfigsForRemovalOfNewlyAddedFields`
-         
+
 Read Concern Counters
   - :serverstatus:`readConcernCounters`, which reports on the
     :ref:`read concern level <read-concern-levels>` specified by query
@@ -595,7 +615,7 @@ Upgrade Procedures
 ------------------
 
 .. important:: Feature Compatibility Version
-   
+
    To upgrade to MongoDB 5.0 from a 4.4 deployment, the 4.4 deployment
    must have ``featureCompatibilityVersion`` set to ``4.4``. To check
    the version:
